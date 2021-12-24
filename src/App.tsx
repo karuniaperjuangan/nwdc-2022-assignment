@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './component/Navbar';
 import Footer from './component/Footer';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import Daftar from './pages/Daftar';
 import About from './pages/About';
@@ -11,7 +11,7 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-      <BrowserRouter>
+      <HashRouter>
       <Navbar /> 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,7 +21,7 @@ function App() {
         </Routes>
        
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
       
   );
 }
