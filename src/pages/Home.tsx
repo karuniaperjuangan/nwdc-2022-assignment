@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import Profil from '../assets/ProfilJuang.jpg';
 
@@ -6,10 +7,28 @@ const Fade = require('react-reveal/Fade');
 
 export default function Home() {
 
+  function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const { height, width } = windowDimensions;
+  function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
 
+    useEffect(() => {
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    },);
+
+  
   return <header className="min-h-screen bg-gradient-to-b from-nwdc-bg-purple via-nwdc-bg-purple to-nwdc-bg-blue justify-start">
     <div className='relative'>
-      <div className=' h-96 max-w-full overflow-hidden flex items-center'>
+      <div className={`${width/height<1?" h-32":'h-96'} max-w-full overflow-hidden flex items-center`}>
         <ReactPlayer
           width={'100%'}
           height={'100vw'}
@@ -21,7 +40,7 @@ export default function Home() {
       <h1 className=' absolute text-2xl md:text-5xl hover:text-red-300 text-white text-center top-1/2 w-full'>
         Karunia Perjuangan
       </h1>
-      <div className=' absolute w-full top-64 h-32 bg-gradient-to-b from-nwdc-transparent to-nwdc-bg-purple'>
+      <div className={` absolute w-full  ${width/height<1?" top-2/3 h-1/3":'top-64 h-32'} bg-gradient-to-b from-nwdc-transparent to-nwdc-bg-purple`}>
 
       </div>
     </div>
@@ -30,7 +49,7 @@ export default function Home() {
     <Fade up>
       <div className=' flex object-contain mx-28 lg:max-w-6xl align-middle items-center'>
         <img src={Profil} className='rounded-full flex-none aspect-square h-32' alt="logo" />
-        <p className=' text-white md:mx-16 my-16 text-justify '>
+        <p className=' text-white md:mx-16 my-16 text-justify px-12'>
           Seorang mahasiswa UGM yang gemar mengeksplor berbagai bidang, termasuk pengembangan Web. Memiliki prinsip bahwa segala hal yang dilakukan harus bermanfaat bagi diri sendiri dan juga orang lain. Bercita-cita untuk berkarir di bidang AI, khususnya NLP, namun untuk saat ini lebih banyak bekerja di bidang pengembangan Mobile dan Web.
         </p>
 
