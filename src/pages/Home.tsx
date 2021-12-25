@@ -33,8 +33,9 @@ export default function Home() {
           width={'100%'}
           height={'100vw'}
           playing={true}
+          loop={true}
           muted={true}
-          url={"https://www.youtube.com/watch?v=UGH_4VYvz0s"}>
+          url={"https://www.youtube.com/watch?v=UGH_4VYvz0s&t=2s"}>
         </ReactPlayer>
       </div>
       <h1 className=' absolute text-2xl md:text-5xl hover:text-red-300 text-white text-center top-1/2 w-full'>
@@ -45,11 +46,12 @@ export default function Home() {
       </div>
     </div>
 <div className=' flex flex-col align-middle items-center'>
-<div className=' h-64'></div>
+<div className=' h-32'></div>
     <Fade up>
-      <div className=' flex object-contain mx-28 lg:max-w-6xl align-middle items-center'>
-        <img src={Profil} className='rounded-full flex-none aspect-square h-32' alt="logo" />
-        <p className=' text-white md:mx-16 my-16 text-justify px-12'>
+      <div className=' flex flex-wrap mx-28 lg:max-w-6xl align-middle w-full justify-center'>
+        <img src={Profil} className='rounded-full my-8 flex-none aspect-square h-32 items-center right' alt="logo" />
+        
+        <p className=' text-white md:mx-16 my-8 text-justify px-12 max-w-lg'>
           Seorang mahasiswa UGM yang gemar mengeksplor berbagai bidang, termasuk pengembangan Web. Memiliki prinsip bahwa segala hal yang dilakukan harus bermanfaat bagi diri sendiri dan juga orang lain. Bercita-cita untuk berkarir di bidang AI, khususnya NLP, namun untuk saat ini lebih banyak bekerja di bidang pengembangan Mobile dan Web.
         </p>
 
@@ -57,16 +59,16 @@ export default function Home() {
     </Fade>
     <div className=' h-64'></div>
     <Fade right>
-    <div className=" grid grid-cols-3 gap-16 px-3 md:px-16 flex-wrap justify-around items-start w-full">
-      <div className=''>
-        <h2 className=' text-white md:text-2xl'>Pendidikan</h2>
+    <div className=" flex gap-16 px-3 md:px-16 flex-wrap justify-around items-start w-full">
+      <div className='max-w-sm'>
+        <h2 className=' text-white md:text-2xl '>Pendidikan</h2>
         <p className=' text-justify w-auto text-white'>Saat ini menempuh pendidikan di Teknologi Informasi UGM sejak 2020. Pernah mengenyam pendidikan di SMP N 8 Yogyakarta dan SMA N 1 Yogyakarta yang telah dikenal luas.</p>
       </div>
-      <div>
+      <div className='max-w-sm'>
         <h2 className=' text-white md:text-2xl'>Pengalaman</h2>
         <p className=' text-justify w-auto text-white'>Pernah dan sedang mengikuti berbagai kegiatan kepanitiaan dan organisasi, terutama KMTETI, NESCO, dan FindIT. Untuk lebih lengkapnya, bisa dicek di Linkedin</p>
       </div>
-      <div>
+      <div className='max-w-sm'>
         <h2 className=' text-white md:text-2xl'>Keahlian</h2>
         <p className=' text-justify w-auto text-white'>Menguasai beberapa bahasa pemrograman, seperti C, C#, Python, Javascript, Dart, dan beberapa frameworknya. Memiliki beberapa keahlian sampingan pula di luar kegiatan pemrograman. </p>
       </div>

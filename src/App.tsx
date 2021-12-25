@@ -12,14 +12,14 @@ import NotFound from './pages/NotFound';
 function App() {
   return (
       <HashRouter>
-      <Navbar /> 
+      
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="daftar" element={<Daftar />} />
           <Route path="about" element={<About />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
-       
+       <Navbar /> 
         <Footer />
       </HashRouter>
       
