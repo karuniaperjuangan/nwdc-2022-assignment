@@ -1,1 +1,1 @@
-Gas langsung cek karuniaperjuangan.github.io
+Gas langsung cek https://karuniaperjuangan.github.io
